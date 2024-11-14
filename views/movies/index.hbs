@@ -1,0 +1,26 @@
+<h1 style="text-align: center; color: #333; font-size: 2.5rem; margin-bottom: 30px;">{{title}}</h1>
+
+{{!-- CREATE button --}}
+{{#if user}}
+  <a href="/movies/add" class="btn btn-success mb-3" style="background-color: #F96E2A; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: background-color 0.3s ease;">Add a New Movie</a>
+{{/if}}
+
+{{!-- Table to display all movies --}}
+<table class="table table-striped table-hover" style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+  <thead style="background-color: #78B3CE; color: white; font-size: 1.1rem; text-align: left;">
+    <tr>
+      <th style="padding: 12px 15px;">Movie Title</th>
+      <th style="padding: 12px 15px;">Release Date</th>
+      <th style="padding: 12px 15px;">Genre</th>
+    </tr>
+  </thead>
+  <tbody style="background-color: #f8f9fa;">
+    {{#each dataset}}
+    <tr style="border-bottom: 1px solid #ddd; transition: background-color 0.3s ease;">
+      <td style="padding: 12px 15px;">{{this.title}}</td>
+      <td style="padding: 12px 15px;">{{toShortDate this.releaseDate}}</td>
+      <td style="padding: 12px 15px;">{{this.genre}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

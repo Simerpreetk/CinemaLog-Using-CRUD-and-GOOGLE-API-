@@ -1,0 +1,34 @@
+<h1 style="text-align: center; color: #333; font-size: 2rem; margin-bottom: 20px;">{{title}}</h1>
+
+<form method="POST" style="max-width: 500px; margin: 0 auto; padding: 30px; background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+  <fieldset class="mb-3">
+    <label for="title" class="col-2" style="font-size: 1rem; color: #333; font-weight: bold;">
+      Movie Title:
+    </label>
+    <input name="title" id="title" required class="form-control" style="padding: 12px; font-size: 1rem; border-radius: 5px; border: 1px solid #ddd; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); margin-top: 5px;"/>
+  </fieldset>
+
+  <fieldset class="mb-3">
+    <label for="releaseDate" class="col-2" style="font-size: 1rem; color: #333; font-weight: bold;">
+      Release Date:
+    </label>
+    <input name="releaseDate" id="releaseDate" required type="date" class="form-control" style="padding: 12px; font-size: 1rem; border-radius: 5px; border: 1px solid #ddd; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); margin-top: 5px;" />
+  </fieldset>
+
+  <fieldset class="mb-3">
+    <label for="genre" class="col-2" style="font-size: 1rem; color: #333; font-weight: bold;">
+      Genre:
+    </label>
+    <select name="genre" id="genre" class="form-control" style="padding: 12px; font-size: 1rem; border-radius: 5px; border: 1px solid #ddd; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); margin-top: 5px;">
+      <option value="action">Action</option>
+      <option value="comedy">Comedy</option>
+      <option value="drama">Drama</option>
+      <option value="horror">Horror</option>
+      <option value="sci-fi">Sci-Fi</option>
+    </select>
+  </fieldset>
+
+  <button class="btn" style="background-color: #F96E2A; color: white; padding: 12px 20px; border: none; border-radius: 5px; font-size: 1rem; font-weight: bold; width: 100%; margin-top: 20px; cursor: pointer; transition: background-color 0.3s ease;">
+    Save Movie
+  </button>
+</form>

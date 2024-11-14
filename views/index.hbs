@@ -1,0 +1,55 @@
+<h1 style="text-align: center; color: #333; font-size: 2rem; margin-bottom: 20px;">{{title}}</h1>
+
+<p style="text-align: center; color: #555; font-size: 1.1rem; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto;">
+  Welcome to {{title}} - your go-to app for managing all the movies you want to watch, re-watch, and keep track of. Whether it's the latest blockbuster, a classic favorite, or an indie gem, {{title}} makes it easy to organize and explore your watchlist!
+</p>
+
+{{!-- CREATE button --}}
+{{#if user}}
+  <div style="text-align: center; margin-bottom: 30px;">
+    <a href="/movies/add" class="btn" style="background-color: #F96E2A; color: white; padding: 10px 20px; border-radius: 5px; font-size: 1rem; font-weight: bold; text-decoration: none; display: inline-block;">Add a New Movie</a>
+  </div>
+{{else}}
+  <p style="text-align: center; color: #777; font-size: 1rem;">Log in to start adding and managing your movie list.</p>
+{{/if}}
+
+{{!-- Display table of movies if logged in --}}
+{{#if dataset.length}}
+  <table class="table" style="width: 100%; border-collapse: collapse; margin-top: 30px;">
+    <thead style="background-color: #343a40; color: white; font-size: 1.1rem; text-align: left;">
+      <tr>
+        <th style="padding: 12px 15px;">Title</th>
+        <th style="padding: 12px 15px;">Release Date</th>
+        <th style="padding: 12px 15px;">Genre</th>
+        <th style="padding: 12px 15px;">Actions</th>
+      </tr>
+    </thead>
+    <tbody style="background-color: #f8f9fa;">
+      {{#each dataset}}
+      <tr style="border-bottom: 1px solid #ddd; transition: background-color 0.3s ease;">
+        <td style="padding: 12px 15px;">{{this.title}}</td>
+        <td style="padding: 12px 15px;">{{toShortDate this.releaseDate}}</td>
+        <td style="padding: 12px 15px;">{{this.genre}}</td>
+        <td style="padding: 12px 15px;">
+          {{#if ../user}}
+            <a href="/movies/edit/{{this._id}}" class="btn" style="background-color: #007bff; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; font-size: 1rem; font-weight: bold; margin-right: 10px; transition: background-color 0.3s ease;">Edit</a>
+            <a href="/movies/delete/{{this._id}}" onclick="return confirm('Are you sure you want to delete this movie?')" class="btn" style="background-color: #dc3545; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; font-size: 1rem; font-weight: bold; transition: background-color 0.3s ease;">Delete</a>
+          {{/if}}
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <p style="text-align: center; font-size: 1rem; color: #888;">No movies added yet. Add some movies to start managing your watchlist!</p>
+{{/if}}
+
+{{!-- Prompt to log in if not authenticated --}}
+{{#unless user}}
+  <p style="text-align: center; font-size: 1.1rem; color: #555; margin-top: 30px;"> 
+    <a href="/login" class="btn" style="background-color: #F96E2A; color: white; padding: 10px 20px; border-radius: 5px; font-size: 1rem; font-weight: bold; text-decoration: none; margin-right: 10px;">Login</a> 
+    or 
+    <a href="/register" class="btn" style="background-color: #F96E2A; color: white; padding: 10px 20px; border-radius: 5px; font-size: 1rem; font-weight: bold; text-decoration: none; margin-left: 10px;">Register</a> 
+    to start tracking movies.
+  </p>
+{{/unless}}

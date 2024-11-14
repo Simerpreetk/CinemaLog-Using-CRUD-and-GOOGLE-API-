@@ -1,0 +1,53 @@
+<h1 style="text-align: center; color: #333; font-size: 2.5rem; margin-bottom: 20px;">Register</h1>
+
+<form method="post" onsubmit="return validateForm()" style="max-width: 500px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+  
+  <!-- Username Field -->
+  <fieldset class="form-group" style="margin-bottom: 15px;">
+    <label for="username" class="col-2 control-label" style="font-size: 1.1rem; color: #555;">Username (Email): *</label>
+    <input
+      name="username"
+      id="username"
+      required
+      type="email"
+      placeholder="email@example.com"
+      class="form-control"
+      style="padding: 10px; font-size: 1rem; border-radius: 5px; border: 1px solid #ccc; transition: border-color 0.3s ease;"
+    />
+  </fieldset>
+
+  <!-- Password Field -->
+  <fieldset class="form-group" style="margin-bottom: 15px;">
+    <label for="password" class="col-2 control-label" style="font-size: 1.1rem; color: #555;">Password: *</label>
+    <input
+      name="password"
+      id="password"
+      type="password"
+      required
+      pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+      class="form-control"
+      style="padding: 10px; font-size: 1rem; border-radius: 5px; border: 1px solid #ccc; transition: border-color 0.3s ease;"
+    />
+    <small class="form-text text-muted" style="font-size: 0.9rem; color: #777;">
+      Must contain at least 8 characters, including one uppercase letter, one lowercase letter, and one number.
+    </small>
+  </fieldset>
+
+  <!-- Confirm Password Field -->
+  <fieldset class="form-group" style="margin-bottom: 20px;">
+    <label for="confirm" class="col-2 control-label" style="font-size: 1.1rem; color: #555;">Confirm Password: *</label>
+    <input
+      name="confirm"
+      id="confirm"
+      type="password"
+      required
+      class="form-control"
+      style="padding: 10px; font-size: 1rem; border-radius: 5px; border: 1px solid #ccc; transition: border-color 0.3s ease;"
+    />
+  </fieldset>
+
+  <!-- Submit Button -->
+  <button type="submit" style="background-color: #F96E2A; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-weight: bold; width: 100%; transition: background-color 0.3s ease;">
+    Register
+  </button>
+</form>

@@ -1,0 +1,203 @@
+/* General Body Styles */
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: #f3f4f6; /* Light gray for a modern feel */
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Margin-top utility */
+.mt-4 {
+  margin-top: 1.5rem;
+}
+
+/* Padding utility */
+.p-5 {
+  padding: 3rem;
+}
+
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: #78B3CE; /* Bright green for all heading tags */
+  margin: 0;
+}
+
+h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+p {
+  font-size: 1.1rem;
+  color: #F96E2A;
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: #FBF8EF; /* Light background for contrast */
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  color: #2dd327; /* Bright green for nav links */
+  margin-right: 20px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ff6b6b; /* Soft red on hover */
+}
+
+/* Hero Section Styling */
+.hero {
+  background-image: url('hero-background.jpg'); /* Background image for hero */
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  padding: 100px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: 1;
+}
+
+.hero h1,
+.hero p {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.3rem;
+}
+
+/* Jumbotron Styling */
+.jumbotron {
+  background-color: #ff6b6b; /* Soft red */
+  color: #ffffff;
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.jumbotron h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.jumbotron p {
+  font-size: 1.5rem;
+}
+
+/* Button Styling */
+.btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-success {
+  background-color: #4caf50; /* Green for success */
+  color: #fff;
+}
+
+.btn-success:hover {
+  background-color: #45a049;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+}
+
+.btn-danger {
+  background-color: #e74c3c; /* Soft red */
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background-color: #c0392b;
+}
+
+/* Table Styling */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.table thead {
+  background-color: #343a40; /* Dark background for header */
+  color: #ffffff;
+}
+
+.table th, .table td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.table-striped tbody tr:nth-child(even) {
+  background-color: #f3f4f6;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #f1f3f5;
+}
+
+/* Footer Styling */
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #1f2937;
+  color: #fff;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer a {
+  color: #ff6b6b;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #ffd966;
+}

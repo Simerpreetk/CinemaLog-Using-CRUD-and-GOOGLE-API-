@@ -1,0 +1,36 @@
+<h1 style="text-align: center; color: #333; font-size: 2rem; margin-bottom: 20px;">{{title}}</h1>
+<p style="text-align: center; color: #777; font-size: 1.1rem; margin-bottom: 30px;">Manage the cast members for each movie here.</p>
+
+{{#if user}}
+  <a href="/cast/add" class="btn" style="background-color: #F96E2A; color: white; padding: 10px 20px; border-radius: 5px; font-size: 1rem; font-weight: bold; text-decoration: none; margin-bottom: 20px; display: inline-block;">Add New Cast Member</a>
+{{/if}}
+
+<table class="table" style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+  <thead style="background-color: #78B3CE; color: white; font-size: 1.1rem; text-align: left; padding: 12px 15px;">
+    <tr>
+      <th style="padding: 12px 15px;">Name</th>
+      <th style="padding: 12px 15px;">Role</th>
+      <th style="padding: 12px 15px;">Movie</th>
+      <th style="padding: 12px 15px;">Age</th>
+      <th style="padding: 12px 15px;">Nationality</th>
+      {{#if user}}<th style="padding: 12px 15px;">Actions</th>{{/if}}
+    </tr>
+  </thead>
+  <tbody style="background-color: #f8f9fa;">
+    {{#each dataset}}
+    <tr style="border-bottom: 1px solid #ddd; transition: background-color 0.3s ease;">
+      <td style="padding: 12px 15px;">{{this.name}}</td>
+      <td style="padding: 12px 15px;">{{this.role}}</td>
+      <td style="padding: 12px 15px;">{{this.movieId.title}}</td>
+      <td style="padding: 12px 15px;">{{this.age}}</td>
+      <td style="padding: 12px 15px;">{{this.nationality}}</td>
+      {{#if ../user}}
+      <td style="padding: 12px 15px;">
+        <a href="/cast/edit/{{this._id}}" class="btn" style="background-color: #78B3CE; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; font-size: 1rem; font-weight: bold; margin-right: 10px; transition: background-color 0.3s ease;">Edit</a>
+        <a href="/cast/delete/{{this._id}}" onclick="return confirmDeletion()" class="btn" style="background-color: #78B3CE; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; font-size: 1rem; font-weight: bold; transition: background-color 0.3s ease;">Delete</a>
+      </td>
+      {{/if}}
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

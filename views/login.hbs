@@ -1,0 +1,39 @@
+<h1 style="text-align: center; font-size: 2.8rem; color: #333;">Login</h1>
+
+{{#if messages}}
+  <div class="alert alert-danger" style="background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; padding: 15px; border-radius: 5px; text-align: center;">
+    Invalid credentials. Please try again.
+  </div>
+{{else}}
+  <div class="alert alert-info" style="background-color: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; padding: 5px; border-radius: 5px; text-align: center;max-width: 400px; margin: 0 auto;">
+    Please enter your credentials to access your movies.
+  </div>
+{{/if}}
+
+<form method="post" style="max-width: 500px; margin: 30px auto; padding: 20px; background-color: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+  
+  <fieldset class="form-group" style="margin-bottom: 20px;">
+    <label for="username" class="col-2 control-label" style="font-size: 1.1rem; color: #333;">Username: *</label>
+    <input name="username" id="username" required class="form-control" style="padding: 10px; font-size: 1rem; border-radius: 5px; border: 1px solid #ccc;" />
+  </fieldset>
+  
+  <fieldset class="form-group" style="margin-bottom: 20px;">
+    <label for="password" class="col-2 control-label" style="font-size: 1.1rem; color: #333;">Password: *</label>
+    <input name="password" id="password" type="password" required class="form-control" style="padding: 10px; font-size: 1rem; border-radius: 5px; border: 1px solid #ccc;" />
+  </fieldset>
+  
+  <button type="submit" style="background-color: #F96E2A; color: white; border: none; padding: 12px 20px; border-radius: 5px; width: 100%; font-size: 1.1rem; cursor: pointer; margin-bottom: 15px;">
+    Login
+  </button>
+
+  <a href="/google" style="background-color: #F96E2A; color: white; text-decoration: none; padding: 12px 20px; border-radius: 5px; display: inline-block; width: 100%; font-size: 1.1rem; text-align: center; margin-bottom: 15px;">
+    Login with Google
+  </a>
+
+  <hr style="border-top: 1px solid #ccc; margin: 20px 0;" />
+  
+  <p style="text-align: center; font-size: 1rem;">
+    Need an account? <a href="/register" title="Register" style="color: #F96E2A; text-decoration: none;">Register</a>
+  </p>
+
+</form>

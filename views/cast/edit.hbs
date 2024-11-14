@@ -1,0 +1,38 @@
+<h1 style="text-align: center; color: #333; font-size: 2rem; margin-bottom: 30px;">{{title}}</h1>
+
+<form method="POST" style="max-width: 700px; margin: 0 auto; padding: 30px; background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+
+  <fieldset class="mb-3">
+    <label for="name" style="font-size: 1rem; color: #333; font-weight: bold;">Name:</label>
+    <input name="name" id="name" required class="form-control" value="{{castMember.name}}" style="padding: 12px; font-size: 1rem; border-radius: 5px; border: 1px solid #ddd; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); margin-top: 5px;" />
+  </fieldset>
+
+  <fieldset class="mb-3">
+    <label for="role" style="font-size: 1rem; color: #333; font-weight: bold;">Role:</label>
+    <input name="role" id="role" required class="form-control" value="{{castMember.role}}" style="padding: 12px; font-size: 1rem; border-radius: 5px; border: 1px solid #ddd; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); margin-top: 5px;" />
+  </fieldset>
+
+  <fieldset class="mb-3">
+    <label for="movieId" style="font-size: 1rem; color: #333; font-weight: bold;">Movie:</label>
+    <select name="movieId" id="movieId" class="form-control" style="padding: 12px; font-size: 1rem; border-radius: 5px; border: 1px solid #ddd; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); margin-top: 5px;">
+      {{#each movies}}
+        <option value="{{this._id}}" {{#if (eq this._id ../castMember.movieId)}}selected{{/if}}>{{this.title}}</option>
+      {{/each}}
+    </select>
+  </fieldset>
+
+  <fieldset class="mb-3">
+    <label for="age" style="font-size: 1rem; color: #333; font-weight: bold;">Age:</label>
+    <input name="age" id="age" type="number" class="form-control" value="{{castMember.age}}" style="padding: 12px; font-size: 1rem; border-radius: 5px; border: 1px solid #ddd; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); margin-top: 5px;" />
+  </fieldset>
+
+  <fieldset class="mb-3">
+    <label for="nationality" style="font-size: 1rem; color: #333; font-weight: bold;">Nationality:</label>
+    <input name="nationality" id="nationality" class="form-control" value="{{castMember.nationality}}" style="padding: 12px; font-size: 1rem; border-radius: 5px; border: 1px solid #ddd; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); margin-top: 5px;" />
+  </fieldset>
+
+  <button type="submit" class="btn" style="background-color: #F96E2A; color: white; padding: 12px 20px; border: none; border-radius: 5px; font-size: 1rem; font-weight: bold; width: 100%; margin-top: 20px; cursor: pointer; transition: background-color 0.3s ease;">
+    Update Cast Member
+  </button>
+
+</form>
